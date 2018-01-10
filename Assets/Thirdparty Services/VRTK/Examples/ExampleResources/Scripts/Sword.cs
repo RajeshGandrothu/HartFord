@@ -19,6 +19,18 @@
             base.Grabbed(grabbingObject);
             controllerReference = VRTK_ControllerReference.GetControllerReference(grabbingObject.controllerEvents.gameObject);
         }
+        public override void StartUsing(VRTK_InteractUse usingObject)
+        {
+            base.StartUsing(usingObject);
+            Debug.Log("PHOTO CAPTURE Sound");
+        }
+
+        public override void StopUsing(VRTK_InteractUse usingObject)
+        {
+            base.StopUsing(usingObject);
+             Debug.Log("PHOTO CAPTURE Sound");
+           
+        }
 
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
         {
