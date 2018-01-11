@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour {
 
 	public static bool IsInLadderTrainingArea { get; private set; }
 
+	private void Awake() {
+		this.name = "Shouvik";
+	}
+
 	void Start () {
 
 	}
