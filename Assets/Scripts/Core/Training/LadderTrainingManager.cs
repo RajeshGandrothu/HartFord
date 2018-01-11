@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LadderTrainingManager : MonoBehaviour {
-
-	public LadderTraining training { get; private set; }
+public class LadderTrainingManager : TrainingManager {
 
 	private void Awake() {
 		this.training = new LadderTraining();
 	}
 
-
-	public void CompleteTraining(){
-		this.training.IsComplete = true;
-	}
 	
 }

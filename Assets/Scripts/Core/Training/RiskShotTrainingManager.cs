@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RiskShotTrainingManager : MonoBehaviour {
-
-	public RiskShotTraining training { get; private set; }
+public class RiskShotTrainingManager : TrainingManager {
 	
 	private void Awake() {
 		this.training = new RiskShotTraining();
-
 		this.training.TrainingSteps.Add("Step 1", CompleteStep1);
 	}
 
@@ -26,7 +23,4 @@ public class RiskShotTrainingManager : MonoBehaviour {
 		Debug.Log("step 1 completed");
 	}
 
-	public void CompleteTraining(){
-		this.training.IsComplete = true;
-	}
 }

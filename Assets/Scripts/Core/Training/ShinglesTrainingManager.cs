@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShinglesTrainingManager : MonoBehaviour {
+public class ShinglesTrainingManager : TrainingManager {
 
-	// Use this for initialization
-	void Start () {
-		
+	private void Awake() {
+		this.training = new ShinglesTraining();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
