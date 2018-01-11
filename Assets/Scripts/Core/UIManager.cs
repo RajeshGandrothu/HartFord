@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour {
         // voice over for learning section.
 
         // show tools section
-        ShowToolsSection ();
     }
 
     // function to satrt evaluation. this is to be called from UI
@@ -26,17 +25,45 @@ public class UIManager : MonoBehaviour {
 
     }
 
-    public void StartLadderTraning () {
+    #region Ladder training Sections
+    public void LadderTraining_Start () {
         Player.transform.position = new Vector3 (50, 0, 0);
     }
+    public void LadderTraining_Complete () { }
 
-    public void StartToolbeltTraining () {
-        Player.transform.position = new Vector3 (50, 0, 0);
+    #endregion
+
+    #region Tool belt training section
+    public void ToolbeltTraining_Start () { }
+    public void ToolbeltTraining_Complete () { }
+
+    // tools ui
+    public void ToolBelt_Single_Tool_UI_Show (string name) {
+        GameObject.Find (name).SetActive (true);
+    }
+    public void ToolBelt_Single_Tool_UI_Hide (string name) {
+        GameObject.Find (name).SetActive (false);
     }
 
-    // screeen function
-    public void ShowToolsSection () {
+    #endregion
+
+    #region Risk Shot section
+    public void RiskShot_Start () {
 
     }
+    public void RiskShot_Complete () {
+
+    }
+    #endregion
+
+    #region Shingles training section
+
+    public void ShinglesTraining_Start () {
+
+    }
+    public void ShinglesTraining_Complete () {
+
+    }
+    #endregion
 
 }
