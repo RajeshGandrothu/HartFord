@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
 
-	public RiskShotTrainingManager riskShotTrainingManager;
-	public LadderTrainingManager ladderTrainingManager;
-
-	private bool IsInLadderTrainingArea = false;
-
 	// Use this for initialization
 	void Awake () {
 		Invoke ("Intro", 10f);
@@ -20,27 +15,23 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	void Intro () {
-		// this.riskShotTrainingManager.TrainingSteps["Step 1"]
 	}
 
 	private void OnTriggerEnter (Collider other) {
-		if (other.tag == "Ladder Training Area" && !IsInLadderTrainingArea) {
-			IsInLadderTrainingArea = true;
+		if (other.tag == "Ladder Training Area" && GameManager.IsInLadderTrainingArea) {
+			GameManager.SetInLadderTraining(true);
+			
 		} else {
-			Reset ();
+
 		}
 
 
 		if(other.tag == "Ladder Training Goal"){
 			// Ladder trainign manager -> complete steps
-			ladderTrainingManager.CompleteTraining();
+			
 
 			// teleport
 		}
-	}
-
-	private void Reset () {
-		IsInLadderTrainingArea = false;
 	}
 
 

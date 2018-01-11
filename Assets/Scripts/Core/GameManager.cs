@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+	public RiskShotTrainingManager riskShotTrainingManager;
+	public LadderTrainingManager ladderTrainingManager;
+
+	public static bool IsInLadderTrainingArea { get; private set; }
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +18,14 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	
+	private void Reset () {
+		IsInLadderTrainingArea = false;
+	}
+
+	public static void SetInLadderTraining(bool value){
+		IsInLadderTrainingArea = value;
+	}
+
 }
