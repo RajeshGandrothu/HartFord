@@ -10,19 +10,18 @@ public class GameManager : MonoBehaviour {
 	public static bool IsInLadderTrainingArea { get; private set; }
 
 	void Start () {
-		
-	}
-	
-	void Update () {
-		
+
 	}
 
-	
+	void Update () {
+
+	}
+
 	private void Reset () {
 		IsInLadderTrainingArea = false;
 	}
 
-	public static void SetInLadderTraining(bool value){
+	public static void SetInLadderTraining (bool value) {
 		IsInLadderTrainingArea = value;
 	}
 

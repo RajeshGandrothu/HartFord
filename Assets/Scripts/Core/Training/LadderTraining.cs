@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class LadderTraining : Training {
 
-	public LadderTraining()
-	{
+	public LadderTraining () {
 		this.TrainingType = "Ladder Training";
-		this.TrainingSteps = new Dictionary<string, System.Action>();
-		this.CompletedSteps = new Dictionary<string,bool>();
+		this.TrainingSteps = new Dictionary<string, System.Action> ();
+		this.CompletedSteps = new Dictionary<string, bool> ();
 		this.IsComplete = false;
 	}
 

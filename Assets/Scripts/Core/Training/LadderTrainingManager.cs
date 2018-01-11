@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class LadderTrainingManager : TrainingManager {
 
-	private void Awake() {
-		this.training = new LadderTraining();
+	private void Awake () {
+		this.training = new LadderTraining ();
 	}
 
-	
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShinglesTrainingManager : TrainingManager {
 
-	private void Awake() {
-		this.training = new ShinglesTraining();
+	private void Awake () {
+		this.training = new ShinglesTraining ();
 	}
-	
+
 }

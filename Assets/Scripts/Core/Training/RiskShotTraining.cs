@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class RiskShotTraining : Training {
 
-	public RiskShotTraining(){
+	public RiskShotTraining () {
 		this.TrainingType = "Risk Shot";
-		this.TrainingSteps = new Dictionary<string, Action>();
-		this.CompletedSteps = new Dictionary<string, bool>();
+		this.TrainingSteps = new Dictionary<string, Action> ();
+		this.CompletedSteps = new Dictionary<string, bool> ();
 		this.IsComplete = false;
 	}
 
