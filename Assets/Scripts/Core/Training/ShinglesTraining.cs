@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShinglesTraining : MonoBehaviour {
+public class ShinglesTraining : Training {
+	public ShinglesTraining () {
+		this.TrainingType = "Shingles Training";
+		this.TrainingSteps = new Dictionary<string, System.Action> ();
+		this.CompletedSteps = new Dictionary<string, bool> ();
+		this.IsComplete = false;
+	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

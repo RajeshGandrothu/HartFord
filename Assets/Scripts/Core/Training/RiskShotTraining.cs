@@ -12,6 +12,4 @@ public class RiskShotTraining : Training {
 		this.IsComplete = false;
 	}
 
-
-
 }
