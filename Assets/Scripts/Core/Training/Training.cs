@@ -1,16 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Training : MonoBehaviour {
+public class Training {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public bool IsComplete { get; set; }
+	public string TrainingType { get; set; }
+	public Dictionary<string, Action> TrainingSteps { get; set; }
+	public Dictionary<string, bool> CompletedSteps { get; set; }
+
 }

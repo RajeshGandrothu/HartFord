@@ -1,16 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RiskShotTraining : MonoBehaviour {
+public class RiskShotTraining : Training {
 
-	// Use this for initialization
-	void Start () {
-		
+	public RiskShotTraining(){
+		this.TrainingType = "Risk Shot";
+		this.TrainingSteps = new Dictionary<string, Action>();
+		this.CompletedSteps = new Dictionary<string, bool>();
+		this.IsComplete = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
+
 }
