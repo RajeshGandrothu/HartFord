@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
 
-	// Use this for initialization
 	void Awake () {
 		Invoke ("Intro", 10f);
 	}
 
-	// Update is called once per frame
 	void Update () {
 
 	}

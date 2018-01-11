@@ -6,13 +6,11 @@ public class UIManager : MonoBehaviour
 {
     public GameObject Player;
 
-    // Use this for initialization
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 

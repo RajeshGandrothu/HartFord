@@ -9,12 +9,10 @@ public class RiskShotTrainingManager : TrainingManager {
 		this.training.TrainingSteps.Add("Step 1", CompleteStep1);
 	}
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
