@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour {
     public GameObject Player;
+    public GameObject Shingle_Types_UI;
 
     void Start () {
 
@@ -25,7 +26,7 @@ public class UIManager : MonoBehaviour {
 
     }
 
-    #region Ladder training Sections
+    #region Ladder training sections
     public void LadderTraining_Start () {
         Player.transform.position = new Vector3 (50, 0, 0);
     }
@@ -57,13 +58,16 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     #region Shingles training section
-
     public void ShinglesTraining_Start () {
 
     }
 
-    public void Shingles_Toggle_UI_Types(){
-
+    public void Shingles_Toggle_UI_Types () {
+        if (this.Shingle_Types_UI.activeInHierarchy) {
+            this.Shingle_Types_UI.SetActive (false);
+        } else {
+            this.Shingle_Types_UI.SetActive (true);
+        }
     }
     public void ShinglesTraining_Complete () {
 
