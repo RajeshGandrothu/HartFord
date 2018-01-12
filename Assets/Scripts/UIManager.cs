@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour {
     public GameObject Player;
     public GameObject Shingle_Types_UI;
+    public GameObject Shingle_Damages_UI;
 
     void Start () {
 
@@ -62,11 +63,19 @@ public class UIManager : MonoBehaviour {
 
     }
 
-    public void Shingles_Toggle_UI_Types () {
+    public void Shingles_Toggle_Types_UI () {
         if (this.Shingle_Types_UI.activeInHierarchy) {
             this.Shingle_Types_UI.SetActive (false);
         } else {
             this.Shingle_Types_UI.SetActive (true);
+        }
+    }
+
+    public void Shingles_Toggle_Damages_UI () {
+        if (this.Shingle_Damages_UI.activeInHierarchy) {
+            this.Shingle_Damages_UI.SetActive (false);
+        } else {
+            this.Shingle_Damages_UI.SetActive (true);
         }
     }
     public void ShinglesTraining_Complete () {
