@@ -61,6 +61,10 @@ public class UIManager : MonoBehaviour {
     public void ShinglesTraining_Start () {
 
     }
+
+    public void Shingles_Toggle_UI_Types(){
+
+    }
     public void ShinglesTraining_Complete () {
 
     }
