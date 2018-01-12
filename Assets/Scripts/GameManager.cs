@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	public RiskShotTrainingManager riskShotTrainingManager;
 	public LadderTrainingManager ladderTrainingManager;
 
 	public static bool IsInLadderTrainingArea { get; private set; }
