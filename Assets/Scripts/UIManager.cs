@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour {
     public GameObject Player;
-    public GameObject Shingle_Types_UI;
-    public GameObject Shingle_Damages_UI;
+
+    #region Shingles UI objects
+    public GameObject Shingles_Types_UI;
+    public GameObject Shingles_Damages_UI;
+    public GameObject Shingles_Replace_Repair_UI;
+
+    #endregion
 
     void Start () {
 
@@ -64,23 +69,29 @@ public class UIManager : MonoBehaviour {
     }
 
     public void Shingles_Toggle_Types_UI () {
-        if (this.Shingle_Types_UI.activeInHierarchy) {
-            this.Shingle_Types_UI.SetActive (false);
-        } else {
-            this.Shingle_Types_UI.SetActive (true);
-        }
+        Toggle (this.Shingles_Types_UI);
     }
 
     public void Shingles_Toggle_Damages_UI () {
-        if (this.Shingle_Damages_UI.activeInHierarchy) {
-            this.Shingle_Damages_UI.SetActive (false);
-        } else {
-            this.Shingle_Damages_UI.SetActive (true);
-        }
+        Toggle (this.Shingles_Damages_UI);
     }
+
+    public void Shingles_Toggle_Replace_Repair_UI () {
+        Toggle (this.Shingles_Replace_Repair_UI);
+    }
+
     public void ShinglesTraining_Complete () {
 
     }
+    
     #endregion
+
+    private void Toggle (GameObject gameObject) {
+        if (gameObject.activeInHierarchy) {
+            gameObject.SetActive (false);
+        } else {
+            gameObject.SetActive (true);
+        }
+    }
 
 }
