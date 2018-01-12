@@ -28,4 +28,11 @@ public class GameManager : MonoBehaviour {
 		IsInLadderTrainingArea = value;
 	}
 
+	#region Raycast in Risk Shot
+		
+		public void RayCast_RiskShot(){
+		}
+
+	#endregion
+
 }
