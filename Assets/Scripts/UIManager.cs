@@ -33,19 +33,19 @@ public class UIManager : MonoBehaviour {
     }
 
     #region Ladder training sections
-    public void LadderTraining_Start () {
-        Player.transform.position = new Vector3 (50, 0, 0);
-        Debug.Log("okokokokok");
-        {
-            
-        }
+    public void LadderTraining_Start () 
+    {
+       Debug.Log("LadderTraining_Start");   
     }
     public void LadderTraining_Complete () { }
 
     #endregion
 
     #region Tool belt training section
-    public void ToolbeltTraining_Start () { }
+    public void ToolbeltTraining_Start () 
+    {
+        Debug.Log("ToolbeltTraining_Start");
+     }
     public void ToolbeltTraining_Complete () { }
 
     // tools ui
