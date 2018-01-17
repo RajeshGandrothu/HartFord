@@ -35,6 +35,10 @@ public class UIManager : MonoBehaviour {
     #region Ladder training sections
     public void LadderTraining_Start () {
         Player.transform.position = new Vector3 (50, 0, 0);
+        Debug.Log("okokokokok");
+        {
+            
+        }
     }
     public void LadderTraining_Complete () { }
 

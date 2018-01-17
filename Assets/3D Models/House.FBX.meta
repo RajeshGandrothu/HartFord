@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 319a7779bf51bbb4282a8928eda17bb9
+timeCreated: 1516169525
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: 1st floor Railing
+    100002: 1stFloor_Balcony_Floor
+    100004: Back_Wall
+    100006: Box003
+    100008: Box005
+    100010: East_RoofValley_A
+    100012: East_RoofValley_B
+    100014: East_Side_Wall
+    100016: EastRoof
+    100018: Entrance_Roof_GrndFlr
+    100020: Exterior_Base_Skirting
+    100022: Fron_Wall
+    100024: Front_Railing
+    100026: Front_Wall_Small
+    100028: //RootNode
+    100030: House_BaseFoundation
+    100032: Main_Door
+    100034: Pipe
+    100036: RidgeCAp_Entrance_Roof_GrndFlr
+    100038: RidgeCap_Long
+    100040: RidgeCap_short
+    100042: Roof_Drainage_System
+    100044: Roof_Geometry_grp
+    100046: Rooftop_Chimney
+    100048: RoofValleye_DrainageSystem
+    100050: Stair
+    100052: ventilation_chimney_A_type
+    100054: Veranda_Exterior_Skirting
+    100056: veranda_WoodenFloor
+    100058: West_Roof
+    100060: West_Side_Wall
+    100062: Window_Base
+    100064: Window_Frame
+    100066: Window_Glass
+    400000: 1st floor Railing
+    400002: 1stFloor_Balcony_Floor
+    400004: Back_Wall
+    400006: Box003
+    400008: Box005
+    400010: East_RoofValley_A
+    400012: East_RoofValley_B
+    400014: East_Side_Wall
+    400016: EastRoof
+    400018: Entrance_Roof_GrndFlr
+    400020: Exterior_Base_Skirting
+    400022: Fron_Wall
+    400024: Front_Railing
+    400026: Front_Wall_Small
+    400028: //RootNode
+    400030: House_BaseFoundation
+    400032: Main_Door
+    400034: Pipe
+    400036: RidgeCAp_Entrance_Roof_GrndFlr
+    400038: RidgeCap_Long
+    400040: RidgeCap_short
+    400042: Roof_Drainage_System
+    400044: Roof_Geometry_grp
+    400046: Rooftop_Chimney
+    400048: RoofValleye_DrainageSystem
+    400050: Stair
+    400052: ventilation_chimney_A_type
+    400054: Veranda_Exterior_Skirting
+    400056: veranda_WoodenFloor
+    400058: West_Roof
+    400060: West_Side_Wall
+    400062: Window_Base
+    400064: Window_Frame
+    400066: Window_Glass
+    2300000: 1st floor Railing
+    2300002: 1stFloor_Balcony_Floor
+    2300004: Back_Wall
+    2300006: Box003
+    2300008: Box005
+    2300010: East_RoofValley_A
+    2300012: East_RoofValley_B
+    2300014: East_Side_Wall
+    2300016: EastRoof
+    2300018: Entrance_Roof_GrndFlr
+    2300020: Exterior_Base_Skirting
+    2300022: Fron_Wall
+    2300024: Front_Railing
+    2300026: Front_Wall_Small
+    2300028: House_BaseFoundation
+    2300030: Main_Door
+    2300032: Pipe
+    2300034: RidgeCAp_Entrance_Roof_GrndFlr
+    2300036: RidgeCap_Long
+    2300038: RidgeCap_short
+    2300040: Roof_Drainage_System
+    2300042: Rooftop_Chimney
+    2300044: RoofValleye_DrainageSystem
+    2300046: Stair
+    2300048: ventilation_chimney_A_type
+    2300050: Veranda_Exterior_Skirting
+    2300052: veranda_WoodenFloor
+    2300054: West_Roof
+    2300056: West_Side_Wall
+    2300058: Window_Base
+    2300060: Window_Frame
+    2300062: Window_Glass
+    3300000: 1st floor Railing
+    3300002: 1stFloor_Balcony_Floor
+    3300004: Back_Wall
+    3300006: Box003
+    3300008: Box005
+    3300010: East_RoofValley_A
+    3300012: East_RoofValley_B
+    3300014: East_Side_Wall
+    3300016: EastRoof
+    3300018: Entrance_Roof_GrndFlr
+    3300020: Exterior_Base_Skirting
+    3300022: Fron_Wall
+    3300024: Front_Railing
+    3300026: Front_Wall_Small
+    3300028: House_BaseFoundation
+    3300030: Main_Door
+    3300032: Pipe
+    3300034: RidgeCAp_Entrance_Roof_GrndFlr
+    3300036: RidgeCap_Long
+    3300038: RidgeCap_short
+    3300040: Roof_Drainage_System
+    3300042: Rooftop_Chimney
+    3300044: RoofValleye_DrainageSystem
+    3300046: Stair
+    3300048: ventilation_chimney_A_type
+    3300050: Veranda_Exterior_Skirting
+    3300052: veranda_WoodenFloor
+    3300054: West_Roof
+    3300056: West_Side_Wall
+    3300058: Window_Base
+    3300060: Window_Frame
+    3300062: Window_Glass
+    4300000: 1st floor Railing
+    4300002: 1stFloor_Balcony_Floor
+    4300004: East_Side_Wall
+    4300006: Back_Wall
+    4300008: Exterior_Base_Skirting
+    4300010: Fron_Wall
+    4300012: Front_Railing
+    4300014: Front_Wall_Small
+    4300016: House_BaseFoundation
+    4300018: Main_Door
+    4300020: Pipe
+    4300022: Roof_Drainage_System
+    4300024: EastRoof
+    4300026: East_RoofValley_A
+    4300028: East_RoofValley_B
+    4300030: Entrance_Roof_GrndFlr
+    4300032: RidgeCAp_Entrance_Roof_GrndFlr
+    4300034: RidgeCap_Long
+    4300036: RidgeCap_short
+    4300038: West_Roof
+    4300040: Rooftop_Chimney
+    4300042: RoofValleye_DrainageSystem
+    4300044: Stair
+    4300046: ventilation_chimney_A_type
+    4300048: Veranda_Exterior_Skirting
+    4300050: veranda_WoodenFloor
+    4300052: West_Side_Wall
+    4300054: Window_Base
+    4300056: Window_Frame
+    4300058: Window_Glass
+    4300060: Box003
+    4300062: Box005
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brick_Wall
+    second: {fileID: 2100000, guid: 500eedd66b8504e429428393df0c3966, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 9c8052c1c6327ef468e922e2c5e59177, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exterior_Base_skirting
+    second: {fileID: 2100000, guid: 48574dd80b7aa19459835de1f3f2c35d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_And_WindowFrame
+    second: {fileID: 2100000, guid: b2cd648dc17442f4691b201ec9d902d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ridge cap
+    second: {fileID: 2100000, guid: abb0d0f6061efe2408f318357f912987, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Standardmaterial_1
+    second: {fileID: 2100000, guid: d554e4e9219443344a7d9d0851b44b1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Standardmaterial_2
+    second: {fileID: 2100000, guid: 78a7183f0dbc5e14d97d55e61c82b5b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White_VerandaFloor
+    second: {fileID: 2100000, guid: eb325c7450564684d995fb71f0150df2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Glass
+    second: {fileID: 2100000, guid: e9d9856699807a14cb30921d45903397, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: front_stair
+    second: {fileID: 2100000, guid: e731de6c0a21006429c886f7dc4d6af1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof-vent
+    second: {fileID: 2100000, guid: 1c0aa0338e10a5e489c18552371e1ad4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vally_DrainageSystem
+    second: {fileID: 2100000, guid: 59dd7d422bb78c141b96363627f9b05f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ventilation_chimney
+    second: {fileID: 2100000, guid: 00889d69d719a4047a5895c32df875e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white2
+    second: {fileID: 2100000, guid: e6357caa1c0b320479a6c81f50a1f517, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
