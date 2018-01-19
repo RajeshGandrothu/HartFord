@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour {
-    public GameObject Player;
+
+    public GameManager gameManager;
 
     #region Shingles UI objects
     public GameObject Shingles_Types_UI;
@@ -33,20 +34,31 @@ public class UIManager : MonoBehaviour {
     }
 
     #region Ladder training sections
-    public void LadderTraining_Start () 
+    public void GoToLadderTraining () 
     {
-       Debug.Log("LadderTraining_Start");   
+        gameManager.GoToLadderTraining();
+      
     }
-    public void LadderTraining_Complete () { }
+    public void LadderTraining_Complete ()
+    {
+        //show ui ladder training comlete......
+    }
 
     #endregion
 
     #region Tool belt training section
+     public void GoToToolbeltTraining () 
+    {
+        gameManager.GoToToolbeltTraining();
+      
+    }
     public void ToolbeltTraining_Start () 
     {
         Debug.Log("ToolbeltTraining_Start");
      }
-    public void ToolbeltTraining_Complete () { }
+    public void ToolbeltTraining_Complete () { 
+        //Show next UI
+    }
 
     // tools ui
     public void ToolBelt_Single_Tool_UI_Show (string name) {

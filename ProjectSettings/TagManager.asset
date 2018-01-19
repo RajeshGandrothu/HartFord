@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TeleportIgnore
+  - Ladder Training Enter
+  - Ladder Training Exit
+  - Toolbelt Training Start
+  - Toolbelt Training Exit
+  - Lader Blinking Spot
   layers:
   - Default
   - TransparentFX
