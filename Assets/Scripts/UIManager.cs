@@ -46,6 +46,26 @@ public class UIManager : MonoBehaviour {
 
     #endregion
 
+    #region About Shingles Type
+     
+    public void AboutShingleType_Asphalt(){}
+    public void AboutShingleType_Metal(){}
+    public void AboutShingleType_Slate(){}
+    public void AboutShingleType_Tiles(){}
+    public void AboutShingleType_Wood(){}
+   
+
+    #endregion
+    #region About Shingles Damage Type
+     
+    public void About_DamageShingleType_Bruising(){}
+    public void About_DamageShingleType_Cracking(){}
+    public void About_DamageShingleType_Missing(){}
+  
+   
+
+    #endregion
+
     #region Tool belt training section
      public void GoToToolbeltTraining () 
     {
