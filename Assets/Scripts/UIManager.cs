@@ -48,11 +48,16 @@ public class UIManager : MonoBehaviour {
 
     #region About Shingles Type
      
-    public void AboutShingleType_Asphalt(){}
-    public void AboutShingleType_Metal(){}
-    public void AboutShingleType_Slate(){}
-    public void AboutShingleType_Tiles(){}
-    public void AboutShingleType_Wood(){}
+    public void AboutShingleType_Asphalt(){ //vioce over about this
+    }
+    public void AboutShingleType_Metal(){//vioce over about this
+    }
+    public void AboutShingleType_Slate(){//vioce over about this
+    }
+    public void AboutShingleType_Tiles(){//vioce over about this
+    }
+    public void AboutShingleType_Wood(){//vioce over about this
+    }
    
 
     #endregion
