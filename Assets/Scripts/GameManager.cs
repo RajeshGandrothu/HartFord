@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     /*camera capture functionality */
 
     private int imageNo;
-    private RenderTexture renderTex;
+    public RenderTexture renderTex;
     private int width = 500, height = 500;
 
     /*camera capture functionality */
