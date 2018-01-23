@@ -10,6 +10,9 @@ TagManager:
   - Toolbelt Training Start
   - Toolbelt Training Exit
   - Lader Blinking Spot
+  - ToolOverviewRight
+  - ToolOverviewLeft
+  - Follower Panel
   layers:
   - Default
   - TransparentFX

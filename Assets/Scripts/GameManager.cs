@@ -4,45 +4,50 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
-	public LadderTrainingManager ladderTrainingManager;
-	public ToolBeltTrainingManager toolbeltTrainingManager;
-	public GameObject CameraRig;
-	public PlayerManager playerManager;
-	public UIManager uiManager;
-	public AudioManager audioManager;
-	public MobileCameraCapture mobileCameraCapture;
+    public LadderTrainingManager ladderTrainingManager;
+    public ToolBeltTrainingManager toolbeltTrainingManager;
+    public GameObject CameraRig;
+    public PlayerManager playerManager;
+    public UIManager uiManager;
+    public AudioManager audioManager;
+    public MobileCameraCapture mobileCameraCapture;
 
-	public Camera mobileCamera;
+    public Camera mobileCamera;
 
-	
-	/*camera capture functionality */
 
-	private int imageNo;
+    /*camera capture functionality */
+
+    private int imageNo;
     private RenderTexture renderTex;
     private int width = 500, height = 500;
 
-/*camera capture functionality */
-	private void Awake() {
-		this.name = "Shouvik";
-		renderTex = new RenderTexture(width, height, 24);
+    /*camera capture functionality */
+    private void Awake()
+    {
+        renderTex = new RenderTexture(width, height, 24);
         mobileCamera.targetTexture = renderTex;
-	}
+    }
 
-	void Start () {
+    void Start()
+    {
+		audioManager.Welcome();
+		audioManager.ViveControlOverview();
+    }
 
-	}
+    void Update()
+    {
 
-	void Update () {
+    }
 
-	}
+    private void Reset()
+    {
+        ladderTrainingManager.training.IsComplete = false;
+    }
 
-	private void Reset () {
-		ladderTrainingManager.training.IsComplete = false;
-	}
-
-	public void StartMobileCamera()
+    public void StartMobileCamera()
     {
         imageNo++;
         string filePath = Application.dataPath + "/screenshot_" + imageNo + ".png";
@@ -61,76 +66,93 @@ public class GameManager : MonoBehaviour {
         return screenshot;
     }
 
+    #region Vive Controls 
+
+  
+    #endregion
 
 
-	#region laddertraining region
-	public void GoToLadderTraining(){
-		// 1. voice over
-		audioManager.GoToLadderTraining();
+    #region laddertraining region
+    public void GoToLadderTraining()
+    {
+        // 1. voice over
+        audioManager.GoToLadderTraining();
 
-		//2. Teleport
-		CameraRig.transform.position=new Vector3(50,0,0);
+        //2. Teleport
+        CameraRig.transform.position = new Vector3(50, 0, 0);
+    }
+
+    public void LadderTraining_Complete()
+    {
+        // complete training
+        ladderTrainingManager.Complete();
+        ladderTrainingManager.HideLadder();
+        // 1. Teleport
+        CameraRig.transform.position = new Vector3(0, 0, 0);
+        // 2. Show complete UI
+        uiManager.LadderTraining_Complete();
+        // 3. voice over
+
+    }
+    public void LadderTraining_Start()
+    {
+        // 1. voice over
+
+        // 2. Show ladder
+        ladderTrainingManager.ShowLadder();
+        // 3. Instructions on ladder usage (voice over)
+    }
+
+
+
+    #endregion
+   
+    #region Toolbelt Training
+    public void GoToToolbeltTraining()
+    {
+        // 1. voice over
+
+        //2. Teleport
+        CameraRig.transform.position = new Vector3(50, 0, -12);
+    }
+    public void ToolbeltTraining_Start()
+    {
+        // 1. voice over
+
+        // 2. Show Toolbelt
+        toolbeltTrainingManager.ShowToolbelt();
+
+
+        // 3. Instructions on Toolbelt usage (voice over)
+    }
+    public void ToolbeltTraining_Exit()
+    {
+        // 1. voice over
+
+        // 2. Hide Toolbelt
+        toolbeltTrainingManager.HideToolbelt();
+        CameraRig.transform.position = new Vector3(0, 0, 0);
+        toolbeltTrainingManager.Complete();
+        uiManager.ToolbeltTraining_Complete();
+    }
+
+    #endregion
+
+    #region Raycast in Risk Shot
+
+#region Go To House
+
+	public void GoToHouse(){
+        CameraRig.transform.position = new Vector3(-24, -16, 50);	
+		CameraRig.transform.Rotate(new Vector3(0,100,0));
+		// playerManager.Teleport(new Vector3(12,0,0));
 	}
-			
-	public void LadderTraining_Complete(){
-		// complete training
-		ladderTrainingManager.Complete();
-		ladderTrainingManager.HideLadder();
-		// 1. Teleport
-		CameraRig.transform.position=new Vector3(0,0,0);
-		// 2. Show complete UI
-		uiManager.LadderTraining_Complete();
-		// 3. voice over
-		
-	}
-	public void LadderTraining_Start(){
-		// 1. voice over
+#endregion
+    public void RayCast_RiskShot()
+    {
 
-		// 2. Show ladder
-		ladderTrainingManager.ShowLadder();
-		// 3. Instructions on ladder usage (voice over)
-	}
+    }
 
-	
-		
-	#endregion
-	#region Toolbelt Training
-	public void GoToToolbeltTraining(){
-		// 1. voice over
-
-		//2. Teleport
-		CameraRig.transform.position=new Vector3(50,0,-12);
-	}
-		public void ToolbeltTraining_Start(){
-		// 1. voice over
-
-		// 2. Show Toolbelt
-		toolbeltTrainingManager.ShowToolbelt();
-
-		
-		// 3. Instructions on Toolbelt usage (voice over)
-	}
-	public void ToolbeltTraining_Exit(){
-		// 1. voice over
-
-		// 2. Hide Toolbelt
-		toolbeltTrainingManager.HideToolbelt();
-		CameraRig.transform.position=new Vector3(0,0,0);
-		toolbeltTrainingManager.Complete();
-		uiManager.ToolbeltTraining_Complete();
-		
-		
-		
-	}
-		
-	#endregion
-
-	#region Raycast in Risk Shot
-		
-		public void RayCast_RiskShot(){
-
-		}
-
-	#endregion
+    #endregion
 
 }

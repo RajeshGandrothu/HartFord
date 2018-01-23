@@ -19,6 +19,14 @@ public class AudioManager : MonoBehaviour {
 		tts.Speak("Please, select an option to create a goal. We recomend you start with retirement planning");
 	}
 
+	public void Welcome(){
+		tts.Speak("Welcome to the Virtual Risk Assessment training.");
+	}
+
+	public void ViveControlOverview(){
+		tts.Speak("The panel in front of you shows how you can make the best use of your vive controllers.");
+	}
+
 	void OnApplicationQuit()
 	{
 		tts.Destory();

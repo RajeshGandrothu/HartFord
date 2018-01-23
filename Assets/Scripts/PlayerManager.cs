@@ -44,8 +44,6 @@ public class PlayerManager : MonoBehaviour {
 		if (other.tag == "Lader Blinking Spot") {
 			other.gameObject.SetActive(false);
 			// Toolbelt trainign manager -> complete steps
-
-			
 		}
 	}
 
