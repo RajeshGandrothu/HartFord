@@ -1,6 +1,7 @@
 ﻿
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -10,8 +11,23 @@ public class GameManager : MonoBehaviour {
 	public GameObject CameraRig;
 	public PlayerManager playerManager;
 	public UIManager uiManager;
+	public AudioManager audioManager;
+	public MobileCameraCapture mobileCameraCapture;
+
+	public Camera mobileCamera;
+
+	
+	/*camera capture functionality */
+
+	private int imageNo;
+    private RenderTexture renderTex;
+    private int width = 500, height = 500;
+
+/*camera capture functionality */
 	private void Awake() {
 		this.name = "Shouvik";
+		renderTex = new RenderTexture(width, height, 24);
+        mobileCamera.targetTexture = renderTex;
 	}
 
 	void Start () {
@@ -26,10 +42,31 @@ public class GameManager : MonoBehaviour {
 		ladderTrainingManager.training.IsComplete = false;
 	}
 
+	public void StartMobileCamera()
+    {
+        imageNo++;
+        string filePath = Application.dataPath + "/screenshot_" + imageNo + ".png";
+        File.WriteAllBytes(filePath, CaptureScreenshot().EncodeToPNG());
+    }
+
+    Texture2D CaptureScreenshot()
+    {
+        RenderTexture tempRT = RenderTexture.active;
+        RenderTexture.active = renderTex;
+        mobileCamera.Render();
+        Texture2D screenshot = new Texture2D(width, height, TextureFormat.RGB24, false);
+        screenshot.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        screenshot.Apply(false);
+        RenderTexture.active = tempRT;
+        return screenshot;
+    }
+
+
 
 	#region laddertraining region
 	public void GoToLadderTraining(){
 		// 1. voice over
+		audioManager.GoToLadderTraining();
 
 		//2. Teleport
 		CameraRig.transform.position=new Vector3(50,0,0);
