@@ -20,12 +20,60 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void Welcome(){
-		tts.Speak("Welcome to the Virtual Risk Assessment training.");
+		tts.Speak("Welcome to the property adjuster training program . During the course of this program , we will be learning how to carry out field inspection and claims damage assessment");
 	}
 
 	public void ViveControlOverview(){
-		tts.Speak("The panel in front of you shows how you can make the best use of your vive controllers.");
+		tts.Speak("Lets have a look at how to operate the VR controls. Use the left controller to teleport to the desired location");
 	}
+	public void ToolsOverview(){
+		tts.Speak("To begin with , we will take a look at the tools you will have to carry . Rotate the tool kit to view all the tools .");
+	}
+	
+
+	public void AboutMetaltShingle(){
+		tts.Speak("About Metal Shingle");
+	}
+	public void AboutTilesShingle(){
+		tts.Speak("now you learn About Tiles type ofShingle");
+	}
+	public void AboutAsphaltShingle(){
+		tts.Speak("now you learn About AsphaltShingle");
+	}
+	public void AboutWoodShingle(){
+		tts.Speak("now you learn About Wood type of Shingle");
+	}
+	public void AboutSlateShingle(){
+		tts.Speak("now you learn About Slate type of Shingle");
+	}
+	public void ChoosingAsphalt(){
+		tts.Speak("That's correct,");
+	}
+	public void AboutBruising_tShingle(){
+		tts.Speak("now you learn About Bruising Shingle");
+	}
+	public void AboutCracking_Shingle(){
+		tts.Speak("now you learn About Cracking Shingle");
+	}
+	public void AboutMissing_Shingle(){
+		tts.Speak("now you learn About Missing Shingle");
+	}
+	public void Choose_Cracking(){
+		tts.Speak("That's correct,");
+	}
+	public void LaderTrainingcomplete_Voice(){
+		tts.Speak("Congartulations, now teliport to the marked position and pulls the lader with grip buttons and climbs up the roof ");
+	}
+	public void LaderTrainingStart_Voice(){
+		tts.Speak("Now you are in ladder training area,select the lader and climbs up using Grip buttons ");
+	}
+	public void TypeOfShingle(){
+		tts.Speak("Now Identify the shingle type ");
+	}
+
+
+
+
 
 	void OnApplicationQuit()
 	{

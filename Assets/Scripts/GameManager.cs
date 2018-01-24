@@ -34,8 +34,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 		audioManager.Welcome();
-		audioManager.ViveControlOverview();
+		
     }
+    public void ViveControlOverview(){
+    audioManager.ViveControlOverview(); 
+    }
+    
 
     void Update()
     {
@@ -88,7 +92,7 @@ public class GameManager : MonoBehaviour
         ladderTrainingManager.Complete();
         ladderTrainingManager.HideLadder();
         // 1. Teleport
-        CameraRig.transform.position = new Vector3(0, 0, 0);
+        CameraRig.transform.position = new Vector3(12, 0, 6);
         // 2. Show complete UI
         uiManager.LadderTraining_Complete();
         // 3. voice over
@@ -143,7 +147,7 @@ public class GameManager : MonoBehaviour
 #region Go To House
 
 	public void GoToHouse(){
-        CameraRig.transform.position = new Vector3(-24, -16, 50);	
+        CameraRig.transform.position = new Vector3(-18, -15, 57);	
 		CameraRig.transform.Rotate(new Vector3(0,100,0));
 		// playerManager.Teleport(new Vector3(12,0,0));
 	}

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     #region Shingles UI objects
     public GameObject[] UI_Panels;
     public GameObject toolBelt;
+     public GameObject trainingtoolBelt;
 
     private GameObject BG;
     private int zRotationAngle = 0;
@@ -28,7 +29,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        NextPanel("Vive Conrtols Overview");
+        NextPanel("HartFordLogo");
     }
     /*padmini */
     
@@ -45,21 +46,27 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(RotateToolBelt(targetZAxis, zRotationAngle, 1.0f));
     }
+    
 
     IEnumerator RotateToolBelt(Vector3 axis, float angle, float duration = 1.0f)
     {
         Quaternion from = toolBelt.transform.rotation;
         Quaternion to = toolBelt.transform.rotation;
+        Quaternion fromm = trainingtoolBelt.transform.rotation;
+        Quaternion too = trainingtoolBelt.transform.rotation;
         to *= Quaternion.Euler(axis * angle);
+        too *= Quaternion.Euler(axis * angle);
 
         float elapsed = 0.0f;
         while (elapsed < duration)
         {
             toolBelt.transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
+             trainingtoolBelt.transform.rotation = Quaternion.Slerp(fromm, too, elapsed / duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
         toolBelt.transform.rotation = to;
+         trainingtoolBelt.transform.rotation = too;
     }
        /*padmini */
 
@@ -70,6 +77,10 @@ public class UIManager : MonoBehaviour
     void Update()
     {
 
+    }
+    
+    public void ShowToolbelt(){
+        toolBelt.SetActive(true);
     }
 
     // function to satrt learning. this is to be called from UI
