@@ -29,7 +29,6 @@ public class AudioManager : MonoBehaviour {
 	public void ToolsOverview(){
 		tts.Speak("To begin with , we will take a look at the tools you will have to carry . Rotate the tool kit to view all the tools .");
 	}
-	
 
 	public void AboutMetaltShingle(){
 		tts.Speak("About Metal Shingle");
@@ -62,7 +61,11 @@ public class AudioManager : MonoBehaviour {
 		tts.Speak("That's correct,");
 	}
 	public void LaderTrainingcomplete_Voice(){
-		tts.Speak("Congartulations, now teliport to the marked position and pulls the lader with grip buttons and climbs up the roof ");
+		tts.Speak("Congartulations.");
+
+		tts.Speak("Lets climb up the ladder and to get to the roof. Hold the grip buttons of the controller and drag the rungs down.");
+		tts.Speak("Ensure you are wearing a non-slip footwear to be safe.");
+		tts.Speak("Be careful.");
 	}
 	public void LaderTrainingStart_Voice(){
 		tts.Speak("Now you are in ladder training area,select the lader and climbs up using Grip buttons ");
@@ -71,8 +74,19 @@ public class AudioManager : MonoBehaviour {
 		tts.Speak("Now Identify the shingle type ");
 	}
 
-
-
+	public void StartTrainingProgram(){
+		tts.Speak("Now that you are familiar  with all the tools , lets start the training program .");
+	}
+	public void SelctComponent(){
+		tts.Speak("Please select a component you would like to learn abou.");
+	}
+	public void SelctRoofStyle(){
+		tts.Speak("Which roof style do you want to go with");
+	}
+	public void LearnAboutShinglesDamages(){
+		tts.Speak("Now you learn about Type of Damages");
+	}
+	
 
 
 	void OnApplicationQuit()
