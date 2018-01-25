@@ -11402,6 +11402,7 @@ RectTransform:
   - {fileID: 1973975199}
   - {fileID: 756801429}
   - {fileID: 2080948875}
+  - {fileID: 615270863}
   m_Father: {fileID: 1240193015}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15780,7 +15781,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &615270861
 BoxCollider:
@@ -15847,15 +15848,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 615270854}
-  m_LocalRotation: {x: 0.70710355, y: 0.00214205, z: 0.00214205, w: 0.70710355}
-  m_LocalPosition: {x: -0.028, y: -0.063, z: 0.269}
-  m_LocalScale: {x: 0.040588424, y: 0.04058842, z: 0.040588416}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3039999, y: 0.9113478, z: -0.08399716}
+  m_LocalScale: {x: 0.09943716, y: 0.10201649, z: 0.08661307}
   m_Children:
   - {fileID: 1237844612}
   - {fileID: 462662962}
-  m_Father: {fileID: 845507330}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 90.346985, y: -90, z: -90}
+  m_Father: {fileID: 442885150}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615927774
 GameObject:
   m_ObjectHideFlags: 0
@@ -19763,12 +19764,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 979630386}
+        m_MethodName: LadderTraining_Complete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21650,7 +21651,6 @@ RectTransform:
   - {fileID: 76509077}
   - {fileID: 1141943734}
   - {fileID: 895570201}
-  - {fileID: 615270863}
   - {fileID: 1380711601}
   m_Father: {fileID: 1607352465}
   m_RootOrder: 3
@@ -35164,7 +35164,7 @@ Transform:
   m_LocalScale: {x: 0.44432563, y: 0.4443259, z: 0.036353726}
   m_Children: []
   m_Father: {fileID: 845507330}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1380711602
 MeshRenderer:
@@ -41136,7 +41136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1607352465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46074,6 +46074,7 @@ GameObject:
   - component: {fileID: 1750628269}
   - component: {fileID: 1750628272}
   - component: {fileID: 1750628271}
+  - component: {fileID: 1750628273}
   - component: {fileID: 1750628270}
   m_Layer: 0
   m_Name: Camera (eye)
@@ -46154,6 +46155,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1750628273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1750628268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 0459fb240e0083e4dab240832b2d2a3f, type: 2}
 --- !u!1001 &1759971809
 Prefab:
   m_ObjectHideFlags: 0
