@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour {
 		tts.Speak("That's correct,");
 	}
 	public void LaderTrainingcomplete_Voice(){
-		tts.Speak("Congartulations.");
+	
 
 		tts.Speak("Lets climb up the ladder and to get to the roof. Hold the grip buttons of the controller and drag the rungs down.");
 		tts.Speak("Ensure you are wearing a non-slip footwear to be safe.");

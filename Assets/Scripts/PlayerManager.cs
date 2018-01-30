@@ -45,6 +45,7 @@ public class PlayerManager : MonoBehaviour {
 			other.gameObject.SetActive(false);
 			// Toolbelt trainign manager -> complete steps
 		}
+		
 	}
 
 	

@@ -129,7 +129,7 @@ namespace Valve.VR.InteractionSystem
 
 
 		//-------------------------------------------------
-		private void HideController()
+		private  void HideController()
 		{
 			for ( int i = 0; i < renderModels.Length; i++ )
 			{
