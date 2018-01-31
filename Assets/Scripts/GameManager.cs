@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -10,36 +9,40 @@ public class GameManager : MonoBehaviour
     public LadderTrainingManager ladderTrainingManager;
     public ToolBeltTrainingManager toolbeltTrainingManager;
     public GameObject CameraRig;
+     public GameObject DamageAssesmentTrigger;
+      public GameObject RoofEnterTrigger;
+      public GameObject MetalRoof;
+        public GameObject WoodRoof;
+          public GameObject SlateRoof;
+            public GameObject TileRoof;
+            public GameObject AsphaltRoof;
+             public GameObject HilightSpot;
+              public AudioSource CapturingSound;
+              public GameObject GameCamrea;
     public PlayerManager playerManager;
     public UIManager uiManager;
     public AudioManager audioManager;
     public MobileCameraCapture mobileCameraCapture;
-
     public Camera mobileCamera;
 
-
-    /*camera capture functionality */
-
     private int imageNo;
-    public RenderTexture renderTex;
-    private int width = 500, height = 500;
+    private int width = 512, height = 256;
 
-    /*camera capture functionality */
     private void Awake()
     {
-        renderTex = new RenderTexture(width, height, 24);
-        mobileCamera.targetTexture = renderTex;
+
     }
 
     void Start()
     {
-		audioManager.Welcome();
-		
+        audioManager.Welcome();
+
     }
-    public void ViveControlOverview(){
-    audioManager.ViveControlOverview(); 
+    public void ViveControlOverview()
+    {
+        audioManager.ViveControlOverview();
     }
-    
+
 
     void Update()
     {
@@ -51,30 +54,24 @@ public class GameManager : MonoBehaviour
         ladderTrainingManager.training.IsComplete = false;
     }
 
-    public void StartMobileCamera()
-    {
-        imageNo++;
-        string filePath = Application.dataPath + "/screenshot_" + imageNo + ".png";
-        File.WriteAllBytes(filePath, CaptureScreenshot().EncodeToPNG());
-    }
 
-    Texture2D CaptureScreenshot()
+    public void CaptureScreenshot()
     {
+        if(GameCamrea.activeInHierarchy){
+            CapturingSound.Play();
+        }
+        
+        Debug.Log("screenshot trigger pressed");
         RenderTexture tempRT = RenderTexture.active;
-        RenderTexture.active = renderTex;
-        mobileCamera.Render();
+        RenderTexture.active = mobileCamera.targetTexture;
         Texture2D screenshot = new Texture2D(width, height, TextureFormat.RGB24, false);
         screenshot.ReadPixels(new Rect(0, 0, width, height), 0, 0);
         screenshot.Apply(false);
         RenderTexture.active = tempRT;
-        return screenshot;
+        imageNo++;
+        string filePath = Application.dataPath + "/screenshot_" + imageNo + ".png";
+        File.WriteAllBytes(filePath, screenshot.EncodeToPNG());
     }
-
-    #region Vive Controls 
-
-  
-    #endregion
-
 
     #region laddertraining region
     public void GoToLadderTraining()
@@ -107,10 +104,52 @@ public class GameManager : MonoBehaviour
         // 3. Instructions on ladder usage (voice over)
     }
 
+    #region ShowDiff Roofs
+    public void ShowMetalRoof(){
+        MetalRoof.SetActive(true);
+        WoodRoof.SetActive(false);
+        SlateRoof.SetActive(false);
+         TileRoof.SetActive(false);
+        AsphaltRoof.SetActive(false);
+    }
+     public void ShowWoodRoof(){
+        MetalRoof.SetActive(false);
+        WoodRoof.SetActive(true);
+        SlateRoof.SetActive(false);
+         TileRoof.SetActive(false);
+        AsphaltRoof.SetActive(false);
+    }
+     public void ShowSlateRoof(){
+        MetalRoof.SetActive(false);
+        WoodRoof.SetActive(false);
+        SlateRoof.SetActive(true);
+         TileRoof.SetActive(false);
+        AsphaltRoof.SetActive(false);
+    }
+     public void ShowTileRoof(){
+        MetalRoof.SetActive(false);
+        WoodRoof.SetActive(false);
+        SlateRoof.SetActive(false);
+         TileRoof.SetActive(true);
+        AsphaltRoof.SetActive(false);
+    }
+      public void ShowAsphaltRoof(){
+        MetalRoof.SetActive(false);
+        WoodRoof.SetActive(false);
+        SlateRoof.SetActive(false);
+         TileRoof.SetActive(false);
+        AsphaltRoof.SetActive(true);
+    }
+    public void ShowhilightSpot(){
+        HilightSpot.SetActive(true);
+    }
+        
+    #endregion
+
 
 
     #endregion
-   
+
     #region Toolbelt Training
     public void GoToToolbeltTraining()
     {
@@ -144,18 +183,45 @@ public class GameManager : MonoBehaviour
 
     #region Raycast in Risk Shot
 
-#region Go To House
+    #region Go To House
 
-	public void GoToHouse(){
-        CameraRig.transform.position = new Vector3(-18, -15, 57);	
-		CameraRig.transform.Rotate(new Vector3(0,100,0));
-		// playerManager.Teleport(new Vector3(12,0,0));
-	}
-#endregion
-    public void RayCast_RiskShot()
+    public void GoToHouse()
     {
+        CameraRig.transform.position = new Vector3(-18, -15, 57);
+        CameraRig.transform.Rotate(new Vector3(0, 100, 0));
+        // playerManager.Teleport(new Vector3(12,0,0));
+    }
+    #endregion
+
+    #region roof top
+
+    public void ReachedRoofTop()
+    {
+        audioManager.RoofTopReachedCongratulations();
+        RoofEnterTrigger.SetActive(false);
+    }
+    #endregion
+
+    #region Damage Assesments
+
+    public void StartDamageAssessment()
+    {
+        uiManager.NextPanel("Choose Type of Shingles_Damages_UI");
+        audioManager.StartDamageAssesment();
+    }
+    public void CompleteDamageAssessment(){
+        audioManager.CompleteDamageAssesment();
+        DamageAssesmentTrigger.SetActive(false);
+        RoofEnterTrigger.SetActive(false);
+
 
     }
+     public void CompleteDamageAssessmentFirst(){
+         audioManager.CompleteDamageAssesmentFirst();
+
+
+    }
+    #endregion
 
     #endregion
 

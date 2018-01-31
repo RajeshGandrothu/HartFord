@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour {
 	void Intro () { }
 
 	void OnTriggerEnter (Collider other) {
-		Debug.Log(other.tag);
+		// Debug.Log(other.tag);
 		if (other.tag == "Ladder Training Enter") {
 			gameManager.LadderTraining_Start();
 		} else {
@@ -41,9 +41,16 @@ public class PlayerManager : MonoBehaviour {
 
 			
 		}
-		if (other.tag == "Lader Blinking Spot") {
+		if (other.tag == "Ladder Blinking Spot") {
 			other.gameObject.SetActive(false);
 			// Toolbelt trainign manager -> complete steps
+		}
+		if(other.gameObject.name == "RoofEnterTrigger"){
+			gameManager.ReachedRoofTop();
+		}
+
+		if(other.gameObject.name == "Damage Assessment Trigger"){
+			gameManager.StartDamageAssessment();
 		}
 		
 	}

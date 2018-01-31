@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 5194ec1ee5973c04fa514b0f2e1d2229
+timeCreated: 1517394739
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: East_RoofValley_A
+    100002: East_RoofValley_B
+    100004: EastRoof
+    100006: Entrance_Roof_GrndFlr
+    100008: RidgeCAp_Entrance_Roof_GrndFlr
+    100010: RidgeCap_Long
+    100012: RidgeCap_short
+    100014: RoofValleye_DrainageSystem
+    100016: //RootNode
+    100018: West_Roof
+    400000: East_RoofValley_A
+    400002: East_RoofValley_B
+    400004: EastRoof
+    400006: Entrance_Roof_GrndFlr
+    400008: RidgeCAp_Entrance_Roof_GrndFlr
+    400010: RidgeCap_Long
+    400012: RidgeCap_short
+    400014: RoofValleye_DrainageSystem
+    400016: //RootNode
+    400018: West_Roof
+    2300000: East_RoofValley_A
+    2300002: East_RoofValley_B
+    2300004: EastRoof
+    2300006: Entrance_Roof_GrndFlr
+    2300008: RidgeCAp_Entrance_Roof_GrndFlr
+    2300010: RidgeCap_Long
+    2300012: RidgeCap_short
+    2300014: RoofValleye_DrainageSystem
+    2300016: West_Roof
+    3300000: East_RoofValley_A
+    3300002: East_RoofValley_B
+    3300004: EastRoof
+    3300006: Entrance_Roof_GrndFlr
+    3300008: RidgeCAp_Entrance_Roof_GrndFlr
+    3300010: RidgeCap_Long
+    3300012: RidgeCap_short
+    3300014: RoofValleye_DrainageSystem
+    3300016: West_Roof
+    4300000: EastRoof
+    4300002: East_RoofValley_A
+    4300004: East_RoofValley_B
+    4300006: Entrance_Roof_GrndFlr
+    4300008: RidgeCAp_Entrance_Roof_GrndFlr
+    4300010: RidgeCap_Long
+    4300012: RidgeCap_short
+    4300014: West_Roof
+    4300016: RoofValleye_DrainageSystem
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_And_WindowFrame
+    second: {fileID: 2100000, guid: b2cd648dc17442f4691b201ec9d902d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ridge cap
+    second: {fileID: 2100000, guid: 7433e48789984d5418c169e799014ee0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slate Shingles
+    second: {fileID: 2100000, guid: 964ba09e867ba15439dfa9e55f647518, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White_VerandaFloor
+    second: {fileID: 2100000, guid: eb325c7450564684d995fb71f0150df2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vally_DrainageSystem
+    second: {fileID: 2100000, guid: 0b72b76a8c950a94b90ef91e79c18385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white2
+    second: {fileID: 2100000, guid: e6357caa1c0b320479a6c81f50a1f517, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

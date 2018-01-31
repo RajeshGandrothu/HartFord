@@ -9,10 +9,13 @@ TagManager:
   - Ladder Training Exit
   - Toolbelt Training Start
   - Toolbelt Training Exit
-  - Lader Blinking Spot
   - ToolOverviewRight
   - ToolOverviewLeft
   - Follower Panel
+  - Pouch
+  - Cracking
+  - LeftController
+  - Ladder Blinking Spot
   layers:
   - Default
   - TransparentFX

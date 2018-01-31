@@ -41,7 +41,7 @@ namespace VRTK.Highlighters
             if (stencilOutline == null)
             {
                 stencilOutline = Instantiate((Material)Resources.Load("OutlineBasic"));
-                Debug.Log("okok");
+             
             }
             SetOptions(options);
             ResetHighlighter();

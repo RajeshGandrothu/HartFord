@@ -10,11 +10,13 @@ public class UIManager : MonoBehaviour
     #region Shingles UI objects
     public GameObject[] UI_Panels;
     public GameObject toolBelt;
-     public GameObject trainingtoolBelt;
+    public GameObject TickMark;
+    public GameObject TickMark1;
+    public GameObject trainingtoolBelt;
 
     private GameObject BG;
     private int zRotationAngle = 0;
-    private Vector3 targetZAxis = new Vector3(0, 0, 1);   
+    private Vector3 targetZAxis = new Vector3(0, 0, 1);
 
 
     #endregion
@@ -32,7 +34,7 @@ public class UIManager : MonoBehaviour
         NextPanel("HartFordLogo");
     }
     /*padmini */
-    
+
     public void RotateToolBelt(string direction)
     {
         if (direction == "right")
@@ -46,7 +48,7 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(RotateToolBelt(targetZAxis, zRotationAngle, 1.0f));
     }
-    
+
 
     IEnumerator RotateToolBelt(Vector3 axis, float angle, float duration = 1.0f)
     {
@@ -61,25 +63,26 @@ public class UIManager : MonoBehaviour
         while (elapsed < duration)
         {
             toolBelt.transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
-             trainingtoolBelt.transform.rotation = Quaternion.Slerp(fromm, too, elapsed / duration);
+            trainingtoolBelt.transform.rotation = Quaternion.Slerp(fromm, too, elapsed / duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
         toolBelt.transform.rotation = to;
-         trainingtoolBelt.transform.rotation = too;
+        trainingtoolBelt.transform.rotation = too;
     }
-       /*padmini */
+    /*padmini */
 
 
 
-    
+
 
     void Update()
     {
 
     }
-    
-    public void ShowToolbelt(){
+
+    public void ShowToolbelt()
+    {
         toolBelt.SetActive(true);
     }
 
@@ -113,7 +116,6 @@ public class UIManager : MonoBehaviour
             if (UI_Panels[i].gameObject.name == name)
             {
                 UI_Panels[i].gameObject.SetActive(true);
-                break;
             }
         }
     }
@@ -226,16 +228,41 @@ public class UIManager : MonoBehaviour
     {
 
     }
+    #region DamageAssessmentCheck
+    public void SelectedCrackedShingles()
+    {
+        TickMark.SetActive(true);
+    }
+    public void SelectedMissingShingles()
+    {
+        TickMark1.SetActive(true);
+    }
+    public void DamageAsessmentCpmpleted()
+    {
+        if (TickMark.activeInHierarchy && TickMark1.activeInHierarchy)
+        {
 
+            gameManager.CompleteDamageAssessment();
+        }
+        else
+        {
+            gameManager.CompleteDamageAssessmentFirst();
+        }
+    }
+
+
+    #endregion
     #endregion
 
 
     #region Story Board
 
-    public void NextPanel(string name){
-         DisbaleAllUI();
-        EnableUI(name);
+    public void NextPanel(string name)
+    {
+        Debug.Log("next panel Show");
+        DisbaleAllUI();
         BG.SetActive(true);
+        EnableUI(name);
     }
 
     #endregion

@@ -22,6 +22,6 @@ public class MobileCameraCapture : MonoBehaviour
 
     private void DoButtonOnePressed(object sender, VRTK.ControllerInteractionEventArgs e)
     {
-        gameManager.StartMobileCamera();
+        gameManager.CaptureScreenshot();
     }
 }
