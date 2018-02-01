@@ -66,11 +66,11 @@ public class AudioManager : MonoBehaviour
 
     public void AboutBruising_Shingle()
     {
-        tts.Speak("To identify this damage , Go close to the highlighted area and touch the shingle ");
+        tts.Speak("To identify this damage , Go close to the highlighted area and touch the shingle  ");
     }
     public void AboutCracking_Shingle()
     {
-        tts.Speak("now you learn About Cracking Shingle");
+        tts.Speak("To identify this damage , Go close to the highlighted area and touch the shingle ");
     }
     public void AboutMissing_Shingle()
     {
@@ -98,6 +98,12 @@ public class AudioManager : MonoBehaviour
     }
 	public void AfterCrackingSound(){
 		tts.Speak("This sound signifies that the shingle is cracked . Identify a few more cracking spots and take a picture with your camera ");
+	}
+    public void IdentifyBrusingShingles(){
+		tts.Speak("yes this is Bruising Shingle ");
+	}
+    public void AfterIdentifyBrusingShingles(){
+		tts.Speak(" Identify a few more cracking spots and take a picture with your camera ");
 	}
 
     #endregion

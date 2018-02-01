@@ -9,16 +9,22 @@ public class GameManager : MonoBehaviour
     public LadderTrainingManager ladderTrainingManager;
     public ToolBeltTrainingManager toolbeltTrainingManager;
     public GameObject CameraRig;
-     public GameObject DamageAssesmentTrigger;
-      public GameObject RoofEnterTrigger;
-      public GameObject MetalRoof;
-        public GameObject WoodRoof;
-          public GameObject SlateRoof;
-            public GameObject TileRoof;
-            public GameObject AsphaltRoof;
-             public GameObject HilightSpot;
-              public AudioSource CapturingSound;
-              public GameObject GameCamrea;
+    public GameObject DamageAssesmentTrigger;
+    public GameObject RoofEnterTrigger;
+    public GameObject MetalRoof;
+    public GameObject WoodRoof;
+    public GameObject SlateRoof;
+    public GameObject TileRoof;
+    public GameObject AsphaltRoof;
+    public GameObject HilightSpot;
+    public AudioSource CapturingSound;
+    public GameObject GameCamrea;
+    public Transform Startingposition;
+    public Transform Laderposition;
+    public Transform RoofCentergposition;
+    public Transform ShinglesAssessmentposition;
+
+   
     public PlayerManager playerManager;
     public UIManager uiManager;
     public AudioManager audioManager;
@@ -59,6 +65,7 @@ public class GameManager : MonoBehaviour
     {
         if(GameCamrea.activeInHierarchy){
             CapturingSound.Play();
+            
         }
         
         Debug.Log("screenshot trigger pressed");
@@ -89,7 +96,7 @@ public class GameManager : MonoBehaviour
         ladderTrainingManager.Complete();
         ladderTrainingManager.HideLadder();
         // 1. Teleport
-        CameraRig.transform.position = new Vector3(12, 0, 6);
+        CameraRig.transform.position = Laderposition.transform.position;
         // 2. Show complete UI
         uiManager.LadderTraining_Complete();
         // 3. voice over
@@ -103,7 +110,10 @@ public class GameManager : MonoBehaviour
         ladderTrainingManager.ShowLadder();
         // 3. Instructions on ladder usage (voice over)
     }
-
+    public void MovetoRoofCenter()
+{
+     CameraRig.transform.position = new Vector3(18.72f,10.75f,-0.32f);
+}
     #region ShowDiff Roofs
     public void ShowMetalRoof(){
         MetalRoof.SetActive(true);
