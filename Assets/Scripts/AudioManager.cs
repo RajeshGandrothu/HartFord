@@ -61,12 +61,31 @@ public class AudioManager : MonoBehaviour
     {
         tts.Speak("now you learn About Slate type of Shingle");
     }
-
+    #region GoodJob
+    public void AfterTakingPictures(){
+        tts.Speak("Good Job..");
+        tts.Speak("You have Successfully learned about the This Damage , now change your mode from camera to controller and Click on Next button to Proceed.");
+    }
+     public void SelectedCrackingShingles(){
+        tts.Speak("thats great..");
+        tts.Speak("There is lot of cracking on few shingles and some shingles are missing");
+    }
+        
+    #endregion
     #region Damages
 
     public void AboutBruising_Shingle()
     {
-        tts.Speak("To identify this damage , Go close to the highlighted area and touch the shingle  ");
+        tts.Speak("ToIdentify this Damage Go close to the highlighted area ,observe clearly and take out the pictures with Your camera");
+    }
+     public void SelectedReplace()
+    {
+        tts.Speak("That’s correct.  As there are lot of cracking and missing observed, it is better to replace them");
+    }
+      public void SuccessfullyCompletedDamageAssesment()
+    {
+        tts.Speak("Good job ! You have successfully completed the training module for inspection of damages");
+       tts.Speak("Now we will take a look at how to measure the area of damage which is an important aspect to estimate the claims payout . Please pick the measuring tape from your toolkit and measure the highlighted area");
     }
     public void AboutCracking_Shingle()
     {
@@ -88,9 +107,17 @@ public class AudioManager : MonoBehaviour
     {
         tts.Speak("To you right is the Damage Assessment area. Please select all the applicable damage types in the UI for your assessment.");
     }
+       public void AboutMissingShiglesReplace_Repair()
+    {
+        tts.Speak("shingles are missing . What do you think is the best way to deal with this damage ? Would you repair these shingles or replace them ??“");
+    }
     public void CompleteDamageAssesment()
     {
         tts.Speak("That’s correct. There is lot of cracking on few shingles and some shingles are missing ");
+    }
+     public void CompletedLearningAboutDamages()
+    {
+        tts.Speak("Congratulations, Now that you are aware of the type of damages , inspect the roof and select the nature of damage on shingle ");
     }
 	public void CompleteDamageAssesmentFirst()
     {

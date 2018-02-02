@@ -80,7 +80,9 @@ public class UIManager : MonoBehaviour
     {
 
     }
-
+    public void disableButton(){
+       
+    }
     public void ShowToolbelt()
     {
         toolBelt.SetActive(true);
@@ -259,7 +261,7 @@ public class UIManager : MonoBehaviour
 
     public void NextPanel(string name)
     {
-        Debug.Log("next panel Show");
+//        Debug.Log("next panel Show");
         DisbaleAllUI();
         BG.SetActive(true);
         EnableUI(name);

@@ -6,8 +6,10 @@ public class OncollisionEnter : MonoBehaviour {
 
 	// Use this for initialization
 	public AudioManager AudioManager;
+	public GameManager gameManager;
 	public UIManager uiManager;
 	public AudioSource Cracking;
+	 private  int CrackSoundCount;
 	
 	void Start () {
 		
@@ -23,6 +25,8 @@ public class OncollisionEnter : MonoBehaviour {
 		if(other.gameObject.tag=="Cracking"){
 			Debug.Log("Crackinggggggggggggggggg Soundddddddddddddddddddddd");
 			Cracking.Play();
+			CrackSoundCount+=1;
+			
 		}
 		if(other.gameObject.tag=="Bruising"){
 			
@@ -31,21 +35,27 @@ public class OncollisionEnter : MonoBehaviour {
 		if(other.gameObject.tag=="Pouch"){
 			other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 		}
+		if(other.gameObject.name == "RoofEnterTrigger"){
+			gameManager.ReachedRoofTop();
+		}
 		
 
 	}
 	void OnTriggerExit(Collider other)
 	{
 		if(other.gameObject.tag=="Cracking"){
-			AudioManager.AfterCrackingSound();
+			if(CrackSoundCount==1){
+				AudioManager.AfterCrackingSound();
+			}
+			
 			Cracking.Stop();
-			uiManager.NextPanel("Cracking IdentifivcationDone");
+			
 
 		}
 		if(other.gameObject.tag=="Bruising"){
 			
 		AudioManager.AfterIdentifyBrusingShingles();
-		uiManager.NextPanel("Cracking IdentifivcationDone");
+		
 		}
 		if(other.gameObject.tag=="Pouch"){
 			other.gameObject.transform.GetChild(0).gameObject.SetActive(false);

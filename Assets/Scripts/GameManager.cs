@@ -17,14 +17,19 @@ public class GameManager : MonoBehaviour
     public GameObject TileRoof;
     public GameObject AsphaltRoof;
     public GameObject HilightSpot;
+    public GameObject NextButton;
+    public GameObject NextButton_Learning;
     public AudioSource CapturingSound;
     public GameObject GameCamrea;
+    public GameObject BruisingShingles;
+     public GameObject CrackingShingles;
     public Transform Startingposition;
     public Transform Laderposition;
     public Transform RoofCentergposition;
     public Transform ShinglesAssessmentposition;
 
-   
+    private  int photo=0;
+    private  int LearningCount=0;
     public PlayerManager playerManager;
     public UIManager uiManager;
     public AudioManager audioManager;
@@ -65,7 +70,19 @@ public class GameManager : MonoBehaviour
     {
         if(GameCamrea.activeInHierarchy){
             CapturingSound.Play();
-            
+            photo+=1;
+        }
+        if((photo==4)&&(BruisingShingles.activeInHierarchy)){
+
+            audioManager.AfterTakingPictures();
+            NextButton.SetActive(true);
+            photo=0;
+        }
+        if((photo==4)&&(CrackingShingles.activeInHierarchy)){
+           audioManager.AfterTakingPictures();
+           NextButton.SetActive(true);
+           photo=0;
+           
         }
         
         Debug.Log("screenshot trigger pressed");
@@ -112,7 +129,27 @@ public class GameManager : MonoBehaviour
     }
     public void MovetoRoofCenter()
 {
-     CameraRig.transform.position = new Vector3(18.72f,10.75f,-0.32f);
+     CameraRig.transform.position = RoofCentergposition.transform.position;
+     LearningCount+=1;
+     Debug.Log(LearningCount);
+     if(LearningCount==2){
+         NextButton.SetActive(false);
+         NextButton_Learning.SetActive(true);
+        
+         Debug.Log("learningggggggggg");
+     }
+}
+    public void MoveToStartingPosition()
+{
+     CameraRig.transform.position = Startingposition.transform.position;
+}
+    public void MoveToLadderPosition()
+{
+     CameraRig.transform.position =Laderposition.transform.position;
+}
+   public void MoveToShinglesAssesmentPosition()
+{
+     CameraRig.transform.position = ShinglesAssessmentposition.transform.position;
 }
     #region ShowDiff Roofs
     public void ShowMetalRoof(){
@@ -150,10 +187,18 @@ public class GameManager : MonoBehaviour
          TileRoof.SetActive(false);
         AsphaltRoof.SetActive(true);
     }
-    public void ShowhilightSpot(){
-        HilightSpot.SetActive(true);
-    }
-        
+    public void ShowBruisingShingles(){
+        BruisingShingles.SetActive(true);
+        CrackingShingles.SetActive(false);
+        }
+         public void ShowCrackingShingles(){
+       CrackingShingles.SetActive(true);
+       BruisingShingles.SetActive(false);
+         }
+         public void ShowMissingShingles(){
+              BruisingShingles.SetActive(false);
+              CrackingShingles.SetActive(false);
+         }
     #endregion
 
 
