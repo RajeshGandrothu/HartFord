@@ -1,0 +1,10 @@
+EXPORTS
+    Uni_Voice_Close @1
+    Uni_Voice_Init @2
+    Uni_Voice_Pause @3
+    Uni_Voice_Rate @4
+    Uni_Voice_Resume @5
+    Uni_Voice_Speak @6
+    Uni_Voice_SpeakEX @7
+    Uni_Voice_Status @8
+    Uni_Voice_Volume @9

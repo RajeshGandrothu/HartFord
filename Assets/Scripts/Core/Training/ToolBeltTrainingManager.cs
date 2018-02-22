@@ -11,7 +11,7 @@ public class ToolBeltTrainingManager : TrainingManager {
 		this.Toolbelt.SetActive(true);
 	}
 	public void HideToolbelt(){
-		this.Toolbelt.SetActive(false);
+		//this.Toolbelt.SetActive(false);
 		
 	}
 	public void Complete(){

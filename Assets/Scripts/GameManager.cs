@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,10 +24,22 @@ public class GameManager : MonoBehaviour
     public GameObject GameCamrea;
     public GameObject BruisingShingles;
      public GameObject CrackingShingles;
+     public GameObject NextForTools;
+
+     public GameObject Button1;
+     public GameObject Button2;
+     public GameObject Button3;
+     public GameObject Button4;
+     public GameObject Button5;
+     public GameObject Cracking_Shingles_UI;
+     public GameObject Missing_Shingles_UI;
+     
+    
     public Transform Startingposition;
     public Transform Laderposition;
     public Transform RoofCentergposition;
     public Transform ShinglesAssessmentposition;
+     public Transform MeasurmentPosition;
 
     private  int photo=0;
     private  int LearningCount=0;
@@ -35,6 +48,7 @@ public class GameManager : MonoBehaviour
     public AudioManager audioManager;
     public MobileCameraCapture mobileCameraCapture;
     public Camera mobileCamera;
+    private int ToolsCount;
 
     private int imageNo;
     private int width = 512, height = 256;
@@ -47,6 +61,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         audioManager.Welcome();
+        ToolsCount=0;
 
     }
     public void ViveControlOverview()
@@ -58,6 +73,25 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+    public void cameraOverViwe(){
+        if((NextForTools.activeInHierarchy)&&(ToolsCount!=2)){
+            ToolsCount+=1;
+        audioManager.YesCamare();
+        }
+    }
+       public void TapeOverViwe(){
+        if((NextForTools.activeInHierarchy)&&(ToolsCount!=2)){
+            ToolsCount+=1;
+        audioManager.YesTape();
+        }
+    }
+       public void ModeChangetoController(){
+        if((NextForTools.activeInHierarchy)&&(ToolsCount==2)){
+           
+        audioManager.ChaneModetoController();
+        NextForTools.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     private void Reset()
@@ -81,6 +115,12 @@ public class GameManager : MonoBehaviour
         if((photo==4)&&(CrackingShingles.activeInHierarchy)){
            audioManager.AfterTakingPictures();
            NextButton.SetActive(true);
+           photo=0;
+           
+        }
+         if((photo==1)&&(NextForTools.activeInHierarchy)){
+           audioManager.SelectTape();
+           
            photo=0;
            
         }
@@ -151,6 +191,10 @@ public class GameManager : MonoBehaviour
 {
      CameraRig.transform.position = ShinglesAssessmentposition.transform.position;
 }
+   public void MoveToMeasuringPosition()
+{
+     CameraRig.transform.position = MeasurmentPosition.transform.position;
+}
     #region ShowDiff Roofs
     public void ShowMetalRoof(){
         MetalRoof.SetActive(true);
@@ -158,6 +202,7 @@ public class GameManager : MonoBehaviour
         SlateRoof.SetActive(false);
          TileRoof.SetActive(false);
         AsphaltRoof.SetActive(false);
+        Invoke("ShowButtion3",3f);
     }
      public void ShowWoodRoof(){
         MetalRoof.SetActive(false);
@@ -165,6 +210,9 @@ public class GameManager : MonoBehaviour
         SlateRoof.SetActive(false);
          TileRoof.SetActive(false);
         AsphaltRoof.SetActive(false);
+        Invoke("ShowButtion1",3f);
+       
+
     }
      public void ShowSlateRoof(){
         MetalRoof.SetActive(false);
@@ -172,6 +220,7 @@ public class GameManager : MonoBehaviour
         SlateRoof.SetActive(true);
          TileRoof.SetActive(false);
         AsphaltRoof.SetActive(false);
+         Invoke("ShowButtion4",3f);
     }
      public void ShowTileRoof(){
         MetalRoof.SetActive(false);
@@ -179,6 +228,7 @@ public class GameManager : MonoBehaviour
         SlateRoof.SetActive(false);
          TileRoof.SetActive(true);
         AsphaltRoof.SetActive(false);
+        Invoke("ShowButtion2",3f);
     }
       public void ShowAsphaltRoof(){
         MetalRoof.SetActive(false);
@@ -186,14 +236,18 @@ public class GameManager : MonoBehaviour
         SlateRoof.SetActive(false);
          TileRoof.SetActive(false);
         AsphaltRoof.SetActive(true);
+         Invoke("ShowButtion5",3f);
+         
     }
     public void ShowBruisingShingles(){
         BruisingShingles.SetActive(true);
         CrackingShingles.SetActive(false);
+        Cracking_Shingles_UI.GetComponent<Button>().interactable=true;
         }
          public void ShowCrackingShingles(){
        CrackingShingles.SetActive(true);
        BruisingShingles.SetActive(false);
+       Missing_Shingles_UI.GetComponent<Button>().interactable=true;
          }
          public void ShowMissingShingles(){
               BruisingShingles.SetActive(false);
@@ -201,7 +255,21 @@ public class GameManager : MonoBehaviour
          }
     #endregion
 
-
+    void ShowButtion1(){
+        Button1.gameObject.GetComponent<Button>().interactable=true;
+    }
+     void ShowButtion2(){
+        Button2.gameObject.GetComponent<Button>().interactable=true;
+    }
+     void ShowButtion3(){
+        Button3.gameObject.GetComponent<Button>().interactable=true;
+    }
+     void ShowButtion4(){
+        Button4.gameObject.GetComponent<Button>().interactable=true;
+    }
+     void ShowButtion5(){
+        Button5.gameObject.GetComponent<Button>().interactable=true;
+    }
 
     #endregion
 
@@ -228,7 +296,7 @@ public class GameManager : MonoBehaviour
         // 1. voice over
 
         // 2. Hide Toolbelt
-        toolbeltTrainingManager.HideToolbelt();
+       // toolbeltTrainingManager.HideToolbelt();
         CameraRig.transform.position = new Vector3(0, 0, 0);
         toolbeltTrainingManager.Complete();
         uiManager.ToolbeltTraining_Complete();

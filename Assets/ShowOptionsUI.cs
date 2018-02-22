@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShowOptionsUI : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class ShowOptionsUI : MonoBehaviour
     public float MinDistance;
     public bool FwdPressed;
     public bool BackPressed;
+    public int Lenght;
+     public Text countText;
 
    public float speed;
 
@@ -54,9 +57,11 @@ public class ShowOptionsUI : MonoBehaviour
   
     void Update()
     {
-        if(tape.transform.localScale.z>=20f){
+        
+        // if(tape.transform.localScale.z>=10f){
            
-        }
+        //   // Lenght=10;
+        // }
         if(FwdPressed)
         {
           tape.transform.localScale=new Vector3(tape.transform.localScale.x, tape.transform.localScale.y, Mathf.MoveTowards(tape.transform.localScale.z, -MaxDistance, Time.deltaTime * -speed));

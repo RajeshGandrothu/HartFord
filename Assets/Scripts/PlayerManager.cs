@@ -5,6 +5,14 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
 
 	 public GameManager gameManager;
+	 public UIManager uimanager;
+	  public AudioManager audioManager;
+	 public GameObject TeliportArea;
+	public GameObject DestinationPoint1;
+	public GameObject DestinationPoint2;
+	public GameObject DestinationPoint3;
+
+
 	void Awake () {
 		Invoke ("Intro", 10f);
 	}
@@ -14,6 +22,10 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	void Intro () { }
+	 
+	 public void ShowTeliportArea(){
+	TeliportArea.SetActive(true);
+	}
 
 	void OnTriggerEnter (Collider other) {
 		// Debug.Log(other.tag);
@@ -51,6 +63,29 @@ public class PlayerManager : MonoBehaviour {
 
 		if(other.gameObject.name == "Damage Assessment Trigger"){
 			gameManager.StartDamageAssessment();
+		}
+
+		if(other.gameObject.tag == "TeliTest"){
+			if(other.gameObject.name=="DestinationPoint1"){
+				other.gameObject.SetActive(false);
+				DestinationPoint2.SetActive(true);
+			}
+		}
+		if(other.gameObject.tag == "TeliTest"){
+			if(other.gameObject.name=="DestinationPoint2"){
+				other.gameObject.SetActive(false);
+				DestinationPoint3.SetActive(true);
+			}
+		}
+		if(other.gameObject.tag == "TeliTest"){
+			if(other.gameObject.name=="DestinationPoint3"){
+				uimanager.NextPanel("NextBTN_ui");
+				other.gameObject.SetActive(false);
+				audioManager.TrySelecting();
+				TeliportArea.SetActive(false);
+				
+				
+			}
 		}
 		
 	}

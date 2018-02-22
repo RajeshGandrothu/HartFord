@@ -17,6 +17,9 @@ TagManager:
   - LeftController
   - Ladder Blinking Spot
   - Bruising
+  - Length
+  - Width
+  - TeliTest
   layers:
   - Default
   - TransparentFX
